@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 1.0.0
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -10,3 +10,6 @@ dependencies:
 name: qrcode
 description: QR Code Reader / Generator
 displayName: QR Code
+repository: https://github.com/BlackHole1/oomol-qrcode
+releaseNotes: First release
+icon: ":fa6-solid:qrcode:#32C5FF:"
