@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "Generator#1": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "Generator#2": {
+      "rfNode": {
+        "position": {
+          "x": 484,
+          "y": 0
+        }
+      }
+    },
+    "Generator#3": {
+      "rfNode": {
+        "position": {
+          "x": 968,
+          "y": 862
+        }
+      }
+    },
+    "+javascript#1": {
+      "rfNode": {
+        "position": {
+          "x": 484,
+          "y": 1002
+        }
+      }
+    },
+    "+javascript#2": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 860
+        }
+      }
+    }
+  }
+}

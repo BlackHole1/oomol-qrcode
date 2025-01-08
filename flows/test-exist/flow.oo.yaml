@@ -1,0 +1,173 @@
+nodes:
+  - task: self::Exist
+    title: "Exist QR Code #1"
+    node_id: Exist#1
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#1
+            output_handle: base64Raw
+  - node_id: +javascript#1
+    node_type: task_node
+    title: "exist image"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: base64Raw
+          description: Output
+          json_schema:
+            {}
+        - handle: base64DataURL
+          json_schema:
+            {}
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#1.js
+          spawn: false
+  - node_id: +javascript#2
+    node_type: task_node
+    title: "not exist image"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: base64Raw
+          description: Output
+          json_schema:
+            {}
+        - handle: base64DataURL
+          json_schema:
+            {}
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#2.js
+          spawn: false
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: boolean
+      outputs_def:
+        []
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#3.js
+    title: must be true
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#3
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: Exist#1
+            output_handle: output
+  - node_id: +javascript#4
+    node_type: task_node
+    title: "must be false"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: Exist#2
+            output_handle: output
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: boolean
+      outputs_def:
+        []
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#4.js
+          spawn: false
+  - task: self::Exist
+    title: "Exist QR Code #2"
+    node_id: Exist#2
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#2
+            output_handle: base64Raw
+  - node_id: Exist#3
+    node_type: task_node
+    title: "Exist QR Code #3"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#1
+            output_handle: base64DataURL
+    task: self::Exist
+  - node_id: +javascript#5
+    node_type: task_node
+    title: "must be true #2"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: Exist#3
+            output_handle: output
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: boolean
+      outputs_def:
+        []
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#5.js
+          spawn: false
+  - node_id: +javascript#6
+    node_type: task_node
+    title: "must be false #2"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: Exist#4
+            output_handle: output
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: boolean
+      outputs_def:
+        []
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#6.js
+          spawn: false
+  - node_id: Exist#4
+    node_type: task_node
+    title: "Exist QR Code #4"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#2
+            output_handle: base64DataURL
+    task: self::Exist

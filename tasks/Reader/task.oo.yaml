@@ -1,0 +1,27 @@
+executor:
+  name: nodejs
+  options:
+    entry: main.ts
+inputs_def:
+  - handle: input
+    json_schema:
+      anyOf:
+        - type: string
+          ui:widget: text
+        - type: string
+        - type: string
+          ui:widget: file
+        - contentMediaType: oomol/bin
+      ui:options:
+        labels:
+          - Base64 with Text
+          - Base64 with String
+          - FilePath
+          - ArrayBuffer
+outputs_def:
+  - handle: output
+    json_schema:
+      type: string
+ui:
+  default_width: 538.1221733443234
+title: Reader QR Code

@@ -1,0 +1,53 @@
+{
+  "nodes": {
+    "+javascript#1": {
+      "rfNode": {
+        "position": {
+          "x": 1570,
+          "y": 250.5
+        }
+      }
+    },
+    "+javascript#3": {
+      "rfNode": {
+        "position": {
+          "x": 484,
+          "y": 155.5
+        }
+      }
+    },
+    "+javascript#4": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    "Reader#3": {
+      "rfNode": {
+        "position": {
+          "x": 1027,
+          "y": 16.5
+        }
+      }
+    },
+    "Reader#4": {
+      "rfNode": {
+        "position": {
+          "x": 1027,
+          "y": 616.5
+        }
+      }
+    },
+    "Reader#1": {
+      "contentWidth": 538.1221733443234,
+      "rfNode": {
+        "position": {
+          "x": 968,
+          "y": 316.5
+        }
+      }
+    }
+  }
+}

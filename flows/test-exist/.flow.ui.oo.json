@@ -1,0 +1,100 @@
+{
+  "nodes": {
+    "Exist#1": {
+      "rfNode": {
+        "position": {
+          "x": 514,
+          "y": 3
+        }
+      }
+    },
+    "+javascript#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 149.5
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+javascript#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 866.5
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+javascript#3": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 998,
+          "y": 0
+        }
+      }
+    },
+    "+javascript#4": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 998,
+          "y": 636
+        }
+      }
+    },
+    "Exist#2": {
+      "rfNode": {
+        "position": {
+          "x": 514,
+          "y": 693
+        }
+      }
+    },
+    "Exist#3": {
+      "rfNode": {
+        "position": {
+          "x": 514,
+          "y": 321
+        }
+      }
+    },
+    "+javascript#5": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 998,
+          "y": 264
+        }
+      }
+    },
+    "+javascript#6": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 998,
+          "y": 1008
+        }
+      }
+    },
+    "Exist#4": {
+      "rfNode": {
+        "position": {
+          "x": 514,
+          "y": 1048
+        }
+      }
+    }
+  }
+}

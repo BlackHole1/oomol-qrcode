@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "jimp": "^1.6.0",
+    "jsqr": "^1.4.0"
+  }
+}

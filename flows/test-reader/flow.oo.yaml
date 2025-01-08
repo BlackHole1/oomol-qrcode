@@ -1,0 +1,98 @@
+nodes:
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: string
+      outputs_def:
+        []
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#1.js
+    title: "JavaScript #1"
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#1
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: Reader#3
+            output_handle: output
+          - node_id: Reader#1
+            output_handle: output
+          - node_id: Reader#4
+            output_handle: output
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          json_schema:
+            type: string
+          value: ""
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            {}
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#3.js
+    title: "JavaScript #3"
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#3
+    inputs_from:
+      - handle: input
+        value: ""
+        from_node:
+          - node_id: +javascript#4
+            output_handle: base64Raw
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: base64Raw
+          description: Output
+          json_schema:
+            {}
+        - handle: base64DataURL
+          json_schema:
+            {}
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#4.js
+    title: image
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#4
+  - task: self::Reader
+    title: "Reader QR Code #3"
+    node_id: Reader#3
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#4
+            output_handle: base64Raw
+  - node_id: Reader#4
+    node_type: task_node
+    title: "Reader QR Code #4"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#4
+            output_handle: base64DataURL
+    task: self::Reader
+  - task: self::Reader
+    title: "Reader QR Code #1"
+    node_id: Reader#1
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: +javascript#3
+            output_handle: output

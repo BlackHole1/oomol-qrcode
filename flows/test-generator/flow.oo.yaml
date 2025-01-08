@@ -1,0 +1,104 @@
+nodes:
+  - task: self::Generator
+    node_id: Generator#1
+    inputs_from:
+      - handle: text
+        value: Hello
+      - handle: picture
+        value:
+      - handle: colorized
+        value: false
+      - handle: contrast
+        value: 1
+      - handle: brightness
+        value: 1
+      - handle: level
+        value: M
+      - handle: version
+        value: 1
+  - node_id: Generator#2
+    node_type: task_node
+    inputs_from:
+      - handle: text
+        value: Hello
+      - handle: picture
+        value: null
+      - handle: colorized
+        value: false
+      - handle: contrast
+        value: 1
+      - handle: brightness
+        value: 1
+      - handle: level
+        value: H
+      - handle: version
+        value: 20
+    task: self::Generator
+  - task: self::Generator
+    node_id: Generator#3
+    inputs_from:
+      - handle: text
+        value: Hello
+      - handle: picture
+        value:
+        from_node:
+          - node_id: +javascript#1
+            output_handle: output
+      - handle: colorized
+        value: true
+      - handle: contrast
+        value: 1
+      - handle: brightness
+        value: 1
+      - handle: level
+        value: M
+      - handle: version
+        value: 15
+  - node_id: +javascript#1
+    node_type: task_node
+    title: "JavaScript #4"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: input
+        value: ""
+        from_node:
+          - node_id: +javascript#2
+            output_handle: base64Raw
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          json_schema:
+            type: string
+          value: ""
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: string
+            ui:widget: file
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#1.js
+          spawn: false
+  - node_id: +javascript#2
+    node_type: task_node
+    title: "image #2"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: base64Raw
+          description: Output
+          json_schema:
+            {}
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#2.js
+          spawn: false

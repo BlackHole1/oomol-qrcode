@@ -1,0 +1,53 @@
+executor:
+  name: python
+  options:
+    entry: __init__.py
+inputs_def:
+  - handle: text
+    json_schema:
+      type: string
+    value: ""
+    nullable: false
+  - handle: picture
+    json_schema:
+      type: string
+      ui:widget: file
+    value:
+    nullable: true
+  - handle: colorized
+    json_schema:
+      type: boolean
+    value: false
+  - handle: contrast
+    json_schema:
+      type: number
+      minimum: 0.1
+    value: 1
+  - handle: brightness
+    json_schema:
+      type: number
+      minimum: 0.1
+    value: 1
+  - handle: level
+    json_schema:
+      enum:
+        - L
+        - M
+        - Q
+        - H
+      ui:options:
+        labels:
+          - ""
+          - ""
+          - ""
+          - ""
+    value: M
+  - handle: version
+    json_schema:
+      type: number
+    value: 1
+outputs_def:
+  - handle: output
+    json_schema:
+      type: string
+description: "Use: https://github.com/x-hw/amazing-qr"
