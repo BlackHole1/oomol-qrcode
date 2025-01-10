@@ -22,11 +22,15 @@ inputs_def:
     json_schema:
       type: number
       minimum: 0.1
+      ui:options:
+        step: 0.1
     value: 1
   - handle: brightness
     json_schema:
       type: number
       minimum: 0.1
+      ui:options:
+        step: 0.1
     value: 1
   - handle: level
     json_schema:
@@ -45,6 +49,9 @@ inputs_def:
   - handle: version
     json_schema:
       type: number
+      ui:options:
+        step: 1
+      minimum: 1
     value: 1
 outputs_def:
   - handle: output
