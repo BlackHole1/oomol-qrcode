@@ -57,5 +57,8 @@ outputs_def:
   - handle: output
     json_schema:
       type: string
-description: "Use: https://github.com/x-hw/amazing-qr"
+description: "Generates customizable QR codes with advanced styling options.
+  Accepts text content, optional background images, and various visual settings
+  including contrast, brightness, colorization, and error correction levels.
+  Outputs the generated QR code image file path and displays a visual preview."
 title: Generator QR Code

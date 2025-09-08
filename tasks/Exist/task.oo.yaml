@@ -23,3 +23,7 @@ outputs_def:
     json_schema:
       type: boolean
 title: Exist QR Code
+description: "Checks whether an image contains a QR code. Accepts various input
+  formats including Base64 text/string, file paths, and binary data. Analyzes
+  the provided image and returns a boolean value indicating the presence of a QR
+  code."
