@@ -4,6 +4,8 @@ executor:
     entry: main.ts
 inputs_def:
   - handle: input
+    description: "QR code image input in various formats: Base64 text, Base64
+      string, file path, or binary data"
     json_schema:
       anyOf:
         - type: string
@@ -20,6 +22,7 @@ inputs_def:
           - ArrayBuffer
 outputs_def:
   - handle: output
+    description: "Decoded text content extracted from the QR code"
     json_schema:
       type: string
 ui:

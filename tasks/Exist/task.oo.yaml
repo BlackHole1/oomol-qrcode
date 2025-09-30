@@ -4,6 +4,8 @@ executor:
     entry: main.ts
 inputs_def:
   - handle: input
+    description: "Image input to check for QR code presence: Base64 text, Base64
+      string, file path, or binary data"
     json_schema:
       anyOf:
         - type: string
@@ -20,6 +22,7 @@ inputs_def:
           - ArrayBuffer
 outputs_def:
   - handle: output
+    description: "Boolean result: true if QR code is detected, false if no QR code is found"
     json_schema:
       type: boolean
 title: Exist QR Code

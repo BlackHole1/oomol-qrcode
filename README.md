@@ -1,155 +1,115 @@
-# QR Code Toolkit for OOMOL Studio
+# QR Code Toolkit
 
-A comprehensive QR Code toolkit for [OOMOL Studio](https://oomol.com/) that provides three essential blocks for QR code operations: generating, reading, and checking QR codes.
+A complete set of tools for working with QR codes in your OOMOL workflows. This toolkit provides everything you need to create, read, and validate QR codes for various applications.
 
-## 📱 What is This?
+## What is This Project?
 
-This toolkit contains three easy-to-use blocks that handle all your QR code needs:
+The QR Code Toolkit is a collection of smart building blocks that help you work with QR codes without any programming knowledge. Whether you need to create QR codes for your business, decode QR codes from images, or check if an image contains a QR code, this toolkit has you covered.
 
-- **🔍 QR Code Reader** - Extract text from QR code images
-- **⚡ QR Code Generator** - Create customized QR codes
-- **✅ QR Code Checker** - Verify if an image contains a QR code
+## Available Blocks
 
-## 🧩 Available Blocks
+### 🎯 Generator QR Code
+**Purpose**: Create custom QR codes with advanced styling options
 
-### 1. QR Code Reader
+**What it does**:
+- Converts any text into a QR code
+- Allows you to customize the appearance with background images
+- Provides professional styling options like contrast and brightness control
+- Supports colorization for branded QR codes
+- Offers different error correction levels for various use cases
 
-**What it does:** Reads and decodes QR codes from various input formats.
+**Perfect for**:
+- Creating QR codes for business cards, flyers, or websites
+- Generating branded QR codes with company logos
+- Making QR codes for events, menus, or contact information
+- Creating high-quality QR codes for print materials
 
-**Inputs:**
-- **Input**: Accepts multiple formats:
-  - Base64 encoded text
-  - Base64 encoded string  
-  - File path to an image
-  - Binary image data (ArrayBuffer)
+**Settings you can adjust**:
+- **Text**: The content you want to encode (website URL, contact info, etc.)
+- **Background Picture**: Optional image to use as background
+- **Colorized**: Enable color customization
+- **Contrast**: Adjust visual contrast (0.1 to higher values)
+- **Brightness**: Control brightness levels (0.1 to higher values)
+- **Error Correction Level**: Choose reliability level (L=Low, M=Medium, Q=Quartile, H=High)
+- **Version**: Set QR code complexity level
 
-**Outputs:**
-- **Text Content**: The decoded text from the QR code
+### 📖 Reader QR Code
+**Purpose**: Extract text content from QR code images
 
-**Use Cases:**
-- Extract URLs from QR code images
-- Read contact information from QR codes
-- Decode any text-based QR code content
+**What it does**:
+- Reads QR codes from various image formats
+- Extracts the hidden text or information
+- Works with images from files, cameras, or other sources
+- Supports multiple input methods for maximum flexibility
 
----
+**Perfect for**:
+- Decoding QR codes from photos or screenshots
+- Extracting URLs, contact information, or messages from QR codes
+- Processing QR codes received via email or messaging
+- Batch processing multiple QR code images
 
-### 2. QR Code Generator
+**Input options**:
+- **Base64 Text**: Paste image data directly
+- **Base64 String**: Use encoded image strings
+- **File Path**: Select image files from your computer
+- **Binary Data**: Process raw image data
 
-**What it does:** Creates customizable QR codes with advanced styling options.
+### ✅ Exist QR Code
+**Purpose**: Check if an image contains a QR code
 
-**Inputs:**
-- **Text**: The content to encode (required)
-- **Background Picture**: Optional image to embed in the QR code
-- **Colorized**: Enable/disable color mode (default: false)
-- **Contrast**: Adjust image contrast (0.1-∞, default: 1.0)
-- **Brightness**: Adjust image brightness (0.1-∞, default: 1.0)  
-- **Error Correction Level**: Choose reliability level
-  - L (Low) - ~7% error correction
-  - M (Medium) - ~15% error correction (default)
-  - Q (Quartile) - ~25% error correction
-  - H (High) - ~30% error correction
-- **Version**: QR code size/capacity (1-40, default: 1)
+**What it does**:
+- Analyzes images to detect QR code presence
+- Returns a simple yes/no answer
+- Works with the same flexible input options as the Reader
+- Helps validate images before processing
 
-**Outputs:**
-- **Generated QR Code**: Path to the created QR code image
+**Perfect for**:
+- Sorting images that contain QR codes
+- Validating user uploads before processing
+- Quality control in automated workflows
+- Pre-filtering images for batch processing
 
-**Features:**
-- Visual preview of generated QR code
-- Customizable styling with background images
-- Adjustable error correction for different use cases
-- Support for various QR code sizes
+**Input options**:
+- Same flexible input methods as the Reader block
+- Returns true if QR code is found, false if not
 
-**Use Cases:**
-- Create QR codes for websites, contact info, or text
-- Generate branded QR codes with company logos
-- Create artistic QR codes with custom backgrounds
+## Common Use Cases
 
----
+### 🏢 Business Applications
+- **Digital Menus**: Create QR codes linking to online menus for restaurants
+- **Contact Sharing**: Generate QR codes containing business contact information
+- **Event Check-in**: Create QR codes for event registration and attendance tracking
+- **Product Information**: Link physical products to digital documentation or websites
 
-### 3. QR Code Checker
+### 📱 Marketing & Communication
+- **Website Links**: Convert long URLs into scannable QR codes
+- **Social Media**: Create QR codes linking to social profiles or campaigns
+- **Promotional Materials**: Add QR codes to flyers, posters, and advertisements
+- **Customer Feedback**: Link to survey forms or review pages
 
-**What it does:** Determines whether an image contains a QR code.
+### 🔄 Data Processing
+- **Image Analysis**: Check large collections of images for QR code content
+- **Content Extraction**: Pull information from QR codes in documents or photos
+- **Workflow Automation**: Automatically process QR codes in business workflows
+- **Quality Assurance**: Verify QR code functionality before publication
 
-**Inputs:**
-- **Input**: Same flexible input formats as the Reader:
-  - Base64 encoded text
-  - Base64 encoded string
-  - File path to an image
-  - Binary image data (ArrayBuffer)
+## Getting Started
 
-**Outputs:**
-- **Has QR Code**: Boolean result (true/false)
+1. **To Create a QR Code**: Use the Generator block with your text content
+2. **To Read a QR Code**: Use the Reader block with your image file
+3. **To Check for QR Codes**: Use the Exist block to validate images first
 
-**Use Cases:**
-- Pre-validate images before processing
-- Filter images containing QR codes from a batch
-- Quality control in QR code workflows
+## Technical Requirements
 
-## 🚀 How to Use
+- No programming knowledge required
+- Works with common image formats (PNG, JPG, etc.)
+- Supports various input methods for maximum flexibility
+- Optimized for both individual use and batch processing
 
-### In OOMOL Studio:
+## Support
 
-1. **Drag and Drop**: Add any of the three blocks to your workflow
-2. **Connect Inputs**: Link your data sources to the block inputs
-3. **Configure Settings**: Adjust parameters as needed (Generator block)
-4. **Run Workflow**: Execute to process your QR codes
-5. **View Results**: Check outputs and preview (Generator shows visual preview)
-
-### Example Workflows:
-
-**Simple QR Code Reading:**
-```
-Image File → QR Code Reader → Text Output
-```
-
-**QR Code Generation with Preview:**
-```
-Text Input → QR Code Generator → Image Preview + File Output
-```
-
-**Batch QR Code Processing:**
-```
-Image Files → QR Code Checker → Filter → QR Code Reader → Text Results
-```
-
-## 🛠 Technical Details
-
-### Dependencies
-- **Reader & Checker**: TypeScript-based using [jimp](https://www.npmjs.com/package/jimp) and [jsQR](https://github.com/cozmo/jsQR)
-- **Generator**: Python-based using [amazing-qr](https://github.com/x-hw/amazing-qr)
-
-### Supported Image Formats
-- PNG, JPEG, BMP, GIF
-- Base64 encoded images
-- Binary image data
-
-### Error Correction Levels Guide
-- **L (Low)**: Best for large QR codes with minimal damage risk
-- **M (Medium)**: Balanced option for most use cases  
-- **Q (Quartile)**: Good for environments with potential interference
-- **H (High)**: Maximum reliability for critical applications
-
-## 📊 Performance Tips
-
-- Use appropriate error correction levels for your environment
-- Higher versions (larger QR codes) can store more data
-- Enable colorized mode only when needed (affects readability)
-- Test QR codes with the Checker block before mass production
-
-## 🔧 Integration
-
-This toolkit integrates seamlessly with OOMOL Studio workflows. Connect these blocks with:
-- File input/output blocks
-- Image processing workflows  
-- Data validation pipelines
-- Batch processing systems
-
-## 📝 License & Credits
-
-- QR Code reading powered by [jsQR](https://github.com/cozmo/jsQR)
-- QR Code generation powered by [amazing-qr](https://github.com/x-hw/amazing-qr)
-- Repository: https://github.com/BlackHole1/oomol-qrcode
+This is an open-source project. For issues or contributions, visit: https://github.com/BlackHole1/oomol-qrcode
 
 ---
 
-*Built for OOMOL Studio - Making QR code operations simple and powerful!*
+*Version 1.0.2 - Latest updates include enhanced layer support for improved QR code generation*

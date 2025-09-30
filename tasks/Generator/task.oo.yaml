@@ -4,21 +4,25 @@ executor:
     entry: __init__.py
 inputs_def:
   - handle: text
+    description: "The text content to encode into the QR code (URL, message, contact
+      info, etc.)"
     json_schema:
       type: string
-    value: ""
     nullable: false
   - handle: picture
+    description: "Optional background image file to embed behind the QR code for branding"
     json_schema:
       type: string
       ui:widget: file
     value:
     nullable: true
   - handle: colorized
+    description: "Enable colorization to create colored QR codes instead of black and white"
     json_schema:
       type: boolean
     value: false
   - handle: contrast
+    description: "Adjust the visual contrast of the QR code (higher values = more contrast)"
     json_schema:
       type: number
       minimum: 0.1
@@ -26,6 +30,7 @@ inputs_def:
         step: 0.1
     value: 1
   - handle: brightness
+    description: "Control the brightness level of the generated QR code"
     json_schema:
       type: number
       minimum: 0.1
@@ -33,6 +38,8 @@ inputs_def:
         step: 0.1
     value: 1
   - handle: level
+    description: "Error correction level: L=Low(~7%), M=Medium(~15%),
+      Q=Quartile(~25%), H=High(~30%)"
     json_schema:
       enum:
         - L
@@ -41,12 +48,14 @@ inputs_def:
         - H
       ui:options:
         labels:
-          - ""
-          - ""
-          - ""
-          - ""
+          - "Low (7%)"
+          - "Medium (15%)"
+          - "Quartile (25%)"
+          - "High (30%)"
     value: M
   - handle: version
+    description: "QR code version (size): 1=21x21 modules, higher numbers = larger
+      size and capacity"
     json_schema:
       type: number
       ui:options:
@@ -55,6 +64,7 @@ inputs_def:
     value: 1
 outputs_def:
   - handle: output
+    description: "File path of the generated QR code image"
     json_schema:
       type: string
 description: "Generates customizable QR codes with advanced styling options.
